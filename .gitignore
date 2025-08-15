@@ -1,11 +1,30 @@
+# Compiled class files
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs
+hs_err_pid*
+
 # IntelliJ IDEA
 .idea/
+*.iws
 *.iml
-
-# Output directories
+*.ipr
 out/
-build/
-
-# OS files
-.DS_Store
-Thumbs.db
