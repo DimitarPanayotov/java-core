@@ -30,7 +30,7 @@ public class NewsApiClientTest {
       """;
 
     @Test
-    void ok_response_is_parsed_and_cached() throws Exception {
+    void testParsedAndCheckedResponse() throws Exception {
         HttpClientWrapper http = mock(HttpClientWrapper.class);
         when(http.get(anyString(), anyMap()))
             .thenReturn(new HttpResponse(200, VALID_JSON));
@@ -57,7 +57,7 @@ public class NewsApiClientTest {
     }
 
     @Test
-    void unauthorized_is_mapped_to_exception() throws Exception {
+    void testUnauthorizedMap() throws Exception {
         HttpClientWrapper http = mock(HttpClientWrapper.class);
         when(http.get(anyString(), anyMap()))
             .thenReturn(new HttpResponse(401, """
@@ -74,7 +74,7 @@ public class NewsApiClientTest {
     }
 
     @Test
-    void request_builder_requires_keyword() {
+    void testRequestBuilderRequiresKeyword() {
         assertThrows(IllegalArgumentException.class, () ->
             NewsRequest.builder()
                 .country("us")
@@ -83,7 +83,7 @@ public class NewsApiClientTest {
     }
 
     @Test
-    void page_and_pageSize_validation() {
+    void testPageAndPageSizeValidation() {
         assertThrows(IllegalArgumentException.class, () ->
             NewsRequest.builder().keyword("x").page(0).build()
         );
